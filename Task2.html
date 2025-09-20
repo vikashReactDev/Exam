@@ -6,7 +6,10 @@
     <title>Document</title>
 </head>
 <body>
+    <button onclick="analys()">Click me</button>
     <script>
+
+        function analys () {
     const text = " JavaScript is amazing and JavaScript is powerful ";
 
 const cleanText = text.trim();
@@ -24,8 +27,13 @@ const result = {
   cleanText: cleanText,
   wordCount: wordCount
 };
+ 
+console.log("JavaScript count:", jsCount);
+console.log("Word counts:", wordCount);
+console.log("Cleaned Text:", cleanText);
+console.log("Final output",result);
 
-console.log(result);
+}
 </script>
 
 </body>
