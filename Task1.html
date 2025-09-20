@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="sorted"></div>
+    <div id="original"></div>
+    <div id="filtered"></div>
+    <div id="mapped"></div>
+    <script>
+    const numbers = [12, 45, 23, 67, 89, 34, 22, 90, 55];
+
+    const filtered = numbers.filter(num => num > 50);
+    const sorted = [...filtered].sort((a, b) => a - b);
+
+    
+    const mapped = sorted.map(num => num * 2);
+
+    document.getElementById('original').innerHTML = "Original:"+numbers.join(', ');
+    document.getElementById('filtered').innerHTML ="Filter Array:" + filtered.join(', ');
+    document.getElementById('sorted').innerHTML ="Sorted array:"+ sorted.join(', ');
+    document.getElementById('mapped').innerHTML = "Multiple by 2 array and Final output: "+ mapped.join(', ');
+
+    </script>
+</body>
+</html>
