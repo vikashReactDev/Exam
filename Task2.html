@@ -12,28 +12,38 @@
         function analys () {
     const text = " JavaScript is amazing and JavaScript is powerful ";
 
-const cleanText = text.trim();
 
-const jsCount = (cleanText.match(/\bJavaScript\b/g) || []).length;
+      const cleanText = text.trim();
 
-const words = cleanText.split(/\s+/); 
-const wordCount = {};
+  
+      const words = cleanText.split(/\s+/);
 
-words.forEach(word => {
-  wordCount[word] = (wordCount[word] || 0) + 1;
-});
 
-const result = {
-  cleanText: cleanText,
-  wordCount: wordCount
-};
- 
-console.log("JavaScript count:", jsCount);
-console.log("Word counts:", wordCount);
-console.log("Cleaned Text:", cleanText);
-console.log("Final output",result);
+      const wordCount = {};
+      let jsCount = 0;
 
-}
+      words.reduce((acc, word) => {
+        acc[word] = (acc[word] || 0) + 1;
+
+        if (word === "JavaScript") {
+          jsCount++;
+        }
+
+        return acc;
+      }, wordCount);
+
+      
+      const result = {
+        cleanText: cleanText,
+        wordCount: wordCount
+      };
+
+      console.log("Clean Text:", cleanText);
+      console.log("'JavaScript' Count:", jsCount);
+      console.log("Word Count Object:", wordCount);
+      console.log("Final Result Object:", result);
+    }
+
 </script>
 
 </body>
